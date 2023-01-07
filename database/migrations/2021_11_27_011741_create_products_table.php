@@ -1,0 +1,275 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class CreateProductsTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('products', function (Blueprint $table) {
+            $table->id();
+            $table->string('name')->unique();
+            $table->text('description')->nullable();
+            $table->string('slug')->unique();
+            $table->string('details')->nullable();
+            $table->integer('price');
+            $table->boolean('featured')->default(false);
+            $table->boolean('sync_to_pos')->default(false);
+
+            $table->char('in_item_number')->nullable();
+            $table->char('in_store')->nullable();
+            $table->char('in_dept_seq_1_store_id')->nullable();
+            $table->char('in_department')->nullable();
+            $table->char('in_class')->nullable();
+            $table->char('in_dept_sequence_number')->nullable();
+            $table->char('in_dept_seq_all_stores_id')->nullable();
+            $table->char('in_prime_seq_1_store_id')->nullable();
+            $table->char('in_primary_vendor')->nullable();
+            $table->char('in_prime_department')->nullable();
+            $table->char('in_prime_class')->nullable();
+            $table->char('in_prime_sequence_number')->nullable();
+            $table->char('in_prime_seq_all_stores_id')->nullable();
+            $table->char('in_mfg_seq_1_store_id')->nullable();
+            $table->char('in_manufacturer')->nullable();
+            $table->char('in_mfg_department')->nullable();
+            $table->char('in_mfg_sequence_number')->nullable();
+            $table->char('in_mfg_seq_all_stores_id')->nullable();
+            $table->char('in_sds_seq_1_store_id')->nullable();
+            $table->char('in_item_short_desc')->nullable();
+            $table->char('in_sds_sequence_number')->nullable();
+            $table->char('in_sds_seq_all_stores_id')->nullable();
+            $table->char('in_cls_seq_1_store_id')->nullable();
+            $table->char('in_cls_class')->nullable();
+            $table->char('in_cls_sequence_number')->nullable();
+            $table->char('in_fis_seq_1_store_id')->nullable();
+            $table->char('in_fineline')->nullable();
+            $table->char('in_fis_sequence_number')->nullable();
+            $table->char('in_fis_seq_all_stores_id')->nullable();
+            $table->char('in_record_type')->nullable();
+            $table->char('in_stock_in_stores_tbl')->nullable();
+            $table->char('in_item_description')->nullable();
+            $table->char('in_mfg_part_number')->nullable();
+            $table->integer('in_alternate_ref_pointer')->nullable();
+            $table->date('in_record_added_date')->nullable();
+            $table->decimal('in_desired_gross_profit', 6, 4)->nullable();
+            $table->char('in_period_end_report_date_year')->nullable();
+            $table->char('in_period_end_report_date_per')->nullable();
+            $table->char('in_code_u1')->nullable();
+            $table->char('in_code_u2')->nullable();
+            $table->char('in_code_u3')->nullable();
+            $table->char('in_code_u4')->nullable();
+            $table->char('in_code_a1')->nullable();
+            $table->char('in_code_a2')->nullable();
+            $table->char('in_code_a3')->nullable();
+            $table->char('in_code_a4')->nullable();
+            $table->char('in_code_b1')->nullable();
+            $table->char('in_code_b2')->nullable();
+            $table->char('in_code_b3')->nullable();
+            $table->char('in_code_b4')->nullable();
+            $table->char('in_code_c1')->nullable();
+            $table->char('in_code_c2')->nullable();
+            $table->char('in_code_c3')->nullable();
+            $table->char('in_code_c4')->nullable();
+            $table->char('in_code_d1')->nullable();
+            $table->char('in_code_d2')->nullable();
+            $table->char('in_code_d3')->nullable();
+            $table->char('in_code_d4')->nullable();
+            $table->char('in_seasonal_sales_code')->nullable();
+            $table->integer('in_price_break_codes')->nullable();
+            $table->char('in_commission_code')->nullable();
+            $table->integer('in_product_code')->nullable();
+            $table->char('in_location_codes')->nullable();
+            $table->char('in_popularity_code')->nullable();
+            $table->char('in_promotional_sales_code')->nullable();
+            $table->char('in_lifo_pool_code')->nullable();
+            $table->char('in_count_promo')->nullable();
+            $table->char('in_rop_protect')->nullable();
+            $table->char('in_code_keep_sales_price')->nullable();
+            $table->char('in_code_keep_stock_data')->nullable();
+            $table->char('in_code_kep_dtl_units_hist')->nullable();
+            $table->char('in_code_ikeep_ppromo_hist')->nullable();
+            $table->char('in_vendor_backord_qty')->nullable();
+            $table->char('in_disc_item')->nullable();
+            $table->char('in_season_promo')->nullable();
+            $table->char('in_order_indic')->nullable();
+            $table->char('in_record_special')->nullable();
+            $table->char('in_price_override')->nullable();
+            $table->char('in_code_has_alt_num')->nullable();
+            $table->char('in_code_pos_returnable')->nullable();
+            $table->char('in_code_tax_status')->nullable();
+            $table->char('in_price_protect')->nullable();
+            $table->char('in_code_print_labels')->nullable();
+            $table->char('in_discontinued')->nullable();
+            $table->char('in_update_department_data')->nullable();
+            $table->char('in_price_rounding_flag')->nullable();
+            $table->char('in_kit_rcd')->nullable();
+            $table->char('in_secondary_vendor')->nullable();
+            $table->char('in_vendor_stock_number')->nullable();
+            $table->char('in_catalogue_page')->nullable();
+            $table->char('in_catalogue_date_year')->nullable();
+            $table->char('in_catalogue_date_per')->nullable();
+            $table->date('in_catalogue_date')->nullable();
+            $table->decimal('in_list_price', 17, 6)->nullable();
+            $table->decimal('in_retail_price', 17, 6)->nullable();
+            $table->decimal('in_price_1', 17, 6)->nullable();
+            $table->decimal('in_price_2', 17, 6)->nullable();
+            $table->decimal('in_price_3', 17, 6)->nullable();
+            $table->decimal('in_price_4', 17, 6)->nullable();
+            $table->decimal('in_price_5', 17, 6)->nullable();
+            $table->decimal('in_replacement_cost', 17, 6)->nullable();
+            $table->decimal('in_market_cost', 17, 6)->nullable();
+            $table->decimal('in_promotion_price', 17, 6)->nullable();
+            $table->decimal('in_old_retail_price', 17, 6)->nullable();
+            $table->decimal('in_average_cost', 17, 6)->nullable();
+            $table->decimal('in_mfg_vend_cost', 17, 6)->nullable();
+            $table->char('in_selling_unit')->nullable();
+            $table->decimal('in_selling_con_fact', 9, 4)->nullable();
+            $table->char('in_pricing_unit')->nullable();
+            $table->integer('in_pricing_dec_place')->nullable();
+            $table->date('in_date_last_retail_change')->nullable();
+            $table->integer('in_alt_dec_place')->nullable();
+            $table->decimal('in_alt_stk_factor', 12, 7)->nullable();
+            $table->decimal('in_price_stk_factor', 12, 7)->nullable();
+            $table->integer('in_stk_dec_place')->nullable();
+            $table->char('in_pos_price_unit')->nullable();
+            $table->char('in_pos_sell_unit')->nullable();
+            $table->decimal('in_cost_in_price_units', 17, 6)->nullable();
+            $table->decimal('in_cost_in_alt_units', 17,6)->nullable();
+            $table->date('in_date_last_replace_change')->nullable();
+            $table->date('in_date_last_mfg_change')->nullable();
+            $table->decimal('in_old_promo_price_1', 17, 6)->nullable();
+            $table->decimal('in_old_promo_price_2', 17, 6)->nullable();
+            $table->decimal('in_old_promo_price_3', 17, 6)->nullable();
+            $table->date('in_date_old_promo_start_1')->nullable();
+            $table->date('in_date_old_promo_end_1')->nullable();
+            $table->date('in_date_old_promo_start_2')->nullable();
+            $table->date('in_date_old_promo_end_2')->nullable();
+            $table->date('in_date_old_promo_start_3')->nullable();
+            $table->date('in_date_old_promo_end_3')->nullable();
+            $table->integer('in_standard_package')->nullable();
+            $table->integer('in_order_multiple')->nullable();
+            $table->char('in_stocking_unit')->nullable();
+            $table->char('in_purchase_unit')->nullable();
+            $table->decimal('in_purchase_con_fact', 9, 4)->nullable();
+            $table->integer('in_purchase_dec_place')->nullable();
+            $table->char('in_tally')->nullable();
+            $table->decimal('in_item_weight', 9, 2)->nullable();
+            $table->char('in_weight_unit')->nullable();
+            $table->decimal('in_quantity_on_hand', 17, 6)->nullable();
+            $table->integer('in_quantity_on_order')->nullable();
+            $table->integer('in_future_order_quantity')->nullable();
+            $table->integer('in_committed_quantity')->nullable();
+            $table->integer('in_customer_backorder_qty')->nullable();
+            $table->integer('in_new_order_quantity')->nullable();
+            $table->integer('in_minimum_buy_quantity')->nullable();
+            $table->integer('in_maximum_stock_level')->nullable();
+            $table->integer('in_sfty_stk')->nullable();
+            $table->integer('in_order_point')->nullable();
+            $table->integer('in_minimum_op')->nullable();
+            $table->date('in_date_of_last_sale')->nullable();
+            $table->date('in_date_of_last_receipt')->nullable();
+            $table->date('in_last_physical_inv_date')->nullable();
+            $table->decimal('in_lost_sales_data', 7, 2)->nullable();
+            $table->decimal('in_buyouts_data', 7, 2)->nullable();
+            $table->integer('in_todate_sales')->nullable();
+            $table->integer('in_ytd_trans')->nullable();
+            $table->bigInteger('in_sales_units_per_1')->nullable();
+            $table->bigInteger('in_sales_units_per_2')->nullable();
+            $table->bigInteger('in_sales_units_per_3')->nullable();
+            $table->bigInteger('in_sales_units_per_4')->nullable();
+            $table->bigInteger('in_sales_units_per_5')->nullable();
+            $table->bigInteger('in_sales_units_per_6')->nullable();
+            $table->bigInteger('in_sales_units_per_7')->nullable();
+            $table->bigInteger('in_sales_units_per_8')->nullable();
+            $table->bigInteger('in_sales_units_per_9')->nullable();
+            $table->bigInteger('in_sales_units_per_10')->nullable();
+            $table->bigInteger('in_sales_units_per_11')->nullable();
+            $table->bigInteger('in_sales_units_per_12')->nullable();
+            $table->bigInteger('in_sales_units_per_13')->nullable();
+            $table->decimal('in_ytd_sales_dollars', 15, 2)->nullable();
+            $table->decimal('in_ytd_cost_dollars', 15, 2)->nullable();
+            $table->decimal('in_ytd_avg_cost_dollars', 15, 2)->nullable();
+            $table->integer('in_ytd_promo_units')->nullable();
+            $table->decimal('in_ytd_promo_sales_dollars', 15, 2)->nullable();
+            $table->decimal('in_ytd_promo_cost_dollars', 15, 2)->nullable();
+            $table->integer('in_seasonal_units')->nullable();
+            $table->char('in_seasonal_flag')->nullable();
+            $table->char('in_ytd_prime_vend_purch_units')->nullable();
+            $table->char('in_ytd_other_purch_units')->nullable();
+            $table->char('in_last_yr_prime_vend_purch')->nullable();
+            $table->char('in_last_yr_other_purch')->nullable();
+            $table->char('in_last_yr_units')->nullable();
+            $table->char('in_last_yr_sales_dollars')->nullable();
+            $table->char('in_last_yr_cost_dollars')->nullable();
+            $table->char('in_last_yr_avg_cost_dollars')->nullable();
+            $table->integer('in_last_year_promo_units')->nullable();
+            $table->integer('in_last_year_seasonal_units')->nullable();
+            $table->decimal('in_ytd_kit_sales_dollars', 13, 2)->nullable();
+            $table->integer('in_ytd_kit_sales_units')->nullable();
+            $table->char('in_fum_update_key')->nullable();
+            $table->integer('in_fum_array_subscript')->nullable();
+            $table->integer('in_lumber_type')->nullable();
+            $table->integer('in_unit_thickness_whole')->nullable();
+            $table->integer('in_unit_thickness_num')->nullable();
+            $table->integer('in_unit_thickness_den')->nullable();
+            $table->integer('in_unit_width_whole')->nullable();
+            $table->integer('in_unit_width_num')->nullable();
+            $table->integer('in_unit_width_den')->nullable();
+            $table->integer('in_unit_length_whole')->nullable();
+            $table->integer('in_unit_length_num')->nullable();
+            $table->integer('in_unit_length_den')->nullable();
+            $table->char('in_months_of_purchase_history')->nullable();
+            $table->char('in_price_hiding_flag')->nullable();
+            $table->decimal('in_lifetime_units', 13, 2)->nullable();
+            $table->integer('in_lifetime_sales_dollars')->nullable();
+            $table->integer('in_lifetime_cost_dollars')->nullable();
+            $table->char('in_loading_required_flag')->nullable();
+            $table->char('in_rental_subtype_record')->nullable();
+            $table->char('in_privatefromecommercefg')->nullable();
+            $table->char('in_line_item_tax_code')->nullable();
+            $table->char('in_rental_price_plan')->nullable();
+            $table->char('in_vista_crc_code')->nullable();
+            $table->char('in_item_group')->nullable();
+            $table->char('in_universal_cost_code')->nullable();
+            $table->decimal('in_hhc_promotion_price', 17, 6)->nullable();
+            $table->decimal('in_todate_sales_dec', 8, 6)->nullable();
+            $table->decimal('in_sales_units_per_1_dec', 8, 6)->nullable();
+            $table->decimal('in_ytd_promo_units_dec', 8, 6)->nullable();
+            $table->decimal('in_lifetime_promo_units', 9, 2)->nullable();
+            $table->decimal('in_lifetime_promo_sales', 9, 2)->nullable();
+            $table->decimal('in_lifetime_credit_units', 9, 2)->nullable();
+            $table->decimal('in_lifetime_credit_sales', 9, 2)->nullable();
+            $table->char('in_mg_group_name')->nullable();
+            $table->char('in_partner_crc_code')->nullable();
+            $table->decimal('in_average_quantity_on_hand', 17, 6)->nullable();
+            $table->decimal('in_running_sales_dollars', 15, 2)->nullable();
+            $table->decimal('in_running_cost_dollars', 15, 2)->nullable();
+            $table->integer('in_days_used_in_calc')->nullable();
+            $table->char('in_last_ratio_info_update')->nullable();
+            $table->integer('in_lost_sales_units')->nullable();
+            $table->integer('in_lost_sales_number')->nullable();
+            $table->integer('in_buyouts_units')->nullable();
+            $table->integer('in_buyouts_number')->nullable();
+            $table->dateTime('in_db_update_datetime')->nullable();
+
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('products');
+    }
+}
